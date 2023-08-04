@@ -1,0 +1,80 @@
+---
+title: "Homework 8"
+output: html_notebook
+---
+
+| Homework 8                     |                Data Analysis with R |
+| :---                           |                                ---: |
+| Due by 11:59 PM on Wed Oct 25  | Business Analytics Graduate Program |
+| Submit via GitHub              |                 BAIS:6060 Fall 2023 |
+
+# Instructions
+
+This homework covers Module 8. Refer to the corresponding materials and
+ICE (with solutions) posted on ICON. Follow all of the instructions
+given on prior homeworks, referring to them as necessary.
+
+# Exercises
+
+The included file `election_results.csv` contains county-by-county
+U.S. presidential election results for 2016. Please review
+`election_results_dictionary.txt` for full information. Note that there
+is no data on Alaska, but Washington D.C. is included.
+
+
+
+## #1
+
+### (a)
+
+Read the data into a data frame `df` with all default options for
+`read_csv`. From this point forward in the homework, do not change the
+contents of `df`.
+
+```{r}
+
+```
+
+### (b)
+
+Save all non-Iowa records in `df` into a new data frame `df_train` and
+all Iowa records into `df_test`.
+
+```{r}
+
+```
+
+### (c)
+
+Train and test a `nearest_neighbor` classification model to predict
+`republican`. Use `df_train` (excluding `region`, `state`, and `county`)
+as the training data, and use `df_test` as the testing data.
+
+In `my_metrics_nn`, save the output of `metrics(...)` for this model.
+Also, save the elements of `df_test$county`, which are the counties that
+are mispredicted by this model, in a new vector `mispredicted_nn`. Make
+sure that `mispredicted_nn` is sorted in alphabetical order.
+
+```{r}
+
+```
+
+### (d)
+
+Repeat part (c) except for `logistic_reg`, saving the results in
+`my_metrics_lr` and `mispredicted_lr`.
+
+```{r}
+
+```
+
+# #2
+
+Using `df` (excluding `region`, `state`, and `county`), do K-means
+clustering of the entire data set with 2 centers. Noting that the output
+of `kmeans` is a list, save the `centers` object in this list to a new
+object called `my_centers`.
+
+```{r}
+
+```
