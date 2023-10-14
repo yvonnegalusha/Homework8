@@ -21,6 +21,13 @@ U.S. presidential election results for 2016. Please review
 `election_results_dictionary.txt` for full information. Note that there
 is no data on Alaska, but Washington D.C. is included.
 
+Add library code.
+
+```{r}
+
+
+
+```
 
 
 ## #1
@@ -29,18 +36,23 @@ is no data on Alaska, but Washington D.C. is included.
 
 Read the data into a data frame `df` with all default options for
 `read_csv`. From this point forward in the homework, do not change the
-contents of `df`.
+contents of `df`. Write `df` to `df.csv` using write_csv.
 
 ```{r}
+
+
 
 ```
 
 ### (b)
 
 Save all non-Iowa records in `df` into a new data frame `df_train` and
-all Iowa records into `df_test`.
+all Iowa records into `df_test`. Write `df_train` to `df_train.csv` using write_csv.
+Write `df_test` to `df_test.csv` using write_csv.
 
 ```{r}
+
+
 
 ```
 
@@ -55,16 +67,23 @@ Also, save the elements of `df_test$county`, which are the counties that
 are mispredicted by this model, in a new vector `mispredicted_nn`. Make
 sure that `mispredicted_nn` is sorted in alphabetical order.
 
+Write `my_metrics_nn` to `my_metrics_nn.csv` using write_csv.
+
 ```{r}
+
+
 
 ```
 
 ### (d)
 
 Repeat part (c) except for `logistic_reg`, saving the results in
-`my_metrics_lr` and `mispredicted_lr`.
+`my_metrics_lr` and `mispredicted_lr`. 
+Write `my_metrics_lr` to `my_metrics_lr.csv` using write_csv.
 
 ```{r}
+
+
 
 ```
 
@@ -73,8 +92,11 @@ Repeat part (c) except for `logistic_reg`, saving the results in
 Using `df` (excluding `region`, `state`, and `county`), do K-means
 clustering of the entire data set with 2 centers. Noting that the output
 of `kmeans` is a list, save the `centers` object in this list to a new
-object called `my_centers`.
+object called `my_centers`. Do this to write `my_centers` to text file:
+write.table(my_centers,'my_centers.txt', col.names=NA)
 
 ```{r}
+
+
 
 ```
